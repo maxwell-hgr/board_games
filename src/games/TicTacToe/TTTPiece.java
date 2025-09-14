@@ -7,7 +7,7 @@ public class TTTPiece implements Piece {
 
 	private Player owner;
 
-	public Player getOwner(){
+	protected Player getOwner(){
 		return owner;
 	}
 }

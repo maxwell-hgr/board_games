@@ -5,4 +5,6 @@ import core.Player;
 public interface Piece {
 
 	Player getOwner();
+
+	boolean[][] getAvaliableMoves();
 }

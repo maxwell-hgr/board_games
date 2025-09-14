@@ -4,9 +4,13 @@ import core.Board;
 
 public class TTTBoard implements Board {
 
-	private Piece[][] pieces = new Piece[3][3];
-	
-	public Piece[][] getBoard(){
+	private Piece[][] pieces;
+
+	public TTTBoard () {
+		this.pieces = new Piece[3][3];
+	}
+
+	protected Piece[][] getPieces(){
 		return pieces;
 	}
 }

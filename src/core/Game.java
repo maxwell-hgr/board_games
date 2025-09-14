@@ -2,7 +2,13 @@ package core;
 
 public interface Game {
 
-	Board startGame();
+	void startGame();
 
-	boolean move(Player player, Board board, int row, int col);
+	void createPlayers();
+
+	boolean[][] getAvaliableMoves();
+
+	void move(int row, int col);
+
+	boolean isEndGame(Player player, Board board);
 }

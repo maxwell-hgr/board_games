@@ -4,5 +4,5 @@ import core.Piece;
 
 public interface Board {
 
-	Piece[][] getBoard();
+	Piece[][] getPieces();
 }
