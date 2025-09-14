@@ -1,4 +1,8 @@
 package core;
 
-public class Board {
+import core.Piece;
+
+public interface Board {
+
+	Piece[][] getBoard();
 }

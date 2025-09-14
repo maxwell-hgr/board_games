@@ -1,4 +1,8 @@
 package core;
 
-public class Piece {
+import core.Player;
+
+public interface Piece {
+
+	Player getOwner();
 }

@@ -1,4 +1,6 @@
 package core;
 
-public class Player {
+public interface Player {
+
+	String getId();
 }
