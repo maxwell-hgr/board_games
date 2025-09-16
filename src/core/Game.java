@@ -10,7 +10,11 @@ public interface Game {
 
 	void move(int row, int col, boolean[][] avaliableMoves);
 
-	boolean isEndGame(Player player, Board board);
+	boolean isEndGame();
 
 	void changePlayer();
+
+    Board getBoard();
+
+    Player getPlayerMoving();
 }

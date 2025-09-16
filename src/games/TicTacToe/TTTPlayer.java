@@ -1,5 +1,7 @@
 package games.TicTacToe;
 
+import core.Player;
+
 public class TTTPlayer implements Player {
 	
 	private String id;
@@ -8,7 +10,7 @@ public class TTTPlayer implements Player {
 		this.id = id;
 	}
 
-	protected String getId(){
+	public String getId(){
 		return id;
 	}
 }
