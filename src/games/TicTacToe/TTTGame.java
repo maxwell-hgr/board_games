@@ -2,6 +2,7 @@ package games.TicTacToe;
 
 import core.Game;
 import games.TicTacToe.TTTBoard;
+import games.TicTacToe.TTTPiece;
 
 public class TTTGame implements Game {
 
@@ -33,15 +34,48 @@ public class TTTGame implements Game {
 		return avaliableMoves;
 	}
 
-	public void move(int row, int col){
+	public void move(int row, int col, boolean[][] avaliableMoves){
+		Piece[][] pieces = board.getPieces();
 
+		if(avaliableMoves[row][col] == true){
+			pieces[row][col] = new Piece(playerMoving);
+		}
 	};
 
 	public boolean isEndGame(Player player, Board board){
-		// game win logic
+		Piece[][] pieces = board.getPieces();
 
-		return true;
+		if(pieces[0,0].getOwner() == playerMoving && 
+			pieces[0,1].getOwner() == playerMoving && 
+			pieces[0,2].getOwner() == playerMoving) return true;
+
+		if(pieces[0,0].getOwner() == playerMoving && 
+			pieces[1,0].getOwner() == playerMoving && 
+			pieces[2,0].getOwner() == playerMoving) return true;
+
+		if(pieces[0,0].getOwner() == playerMoving && 
+			pieces[1,1].getOwner() == playerMoving && 
+			pieces[2,2].getOwner() == playerMoving) return true;
+
+		if(pieces[0,1].getOwner() == playerMoving && 
+			pieces[1,1].getOwner() == playerMoving && 
+			pieces[2,1].getOwner() == playerMoving) return true;
+
+		if(pieces[0,2].getOwner() == playerMoving && 
+			pieces[1,1].getOwner() == playerMoving && 
+			pieces[2,0].getOwner() == playerMoving) return true;
+
+		if(pieces[1,0].getOwner() == playerMoving && 
+			pieces[1,1].getOwner() == playerMoving && 
+			pieces[1,2].getOwner() == playerMoving) return true;
+
+		return false;
 	};
+
+	public void changePlayer () {
+		if(playerMoving == players[0]) playerMoving = players[1];
+		else playerMoving = players[0];
+	}
 
 	private void createPlayers(){
 		Player p1 = new TTTPlayer("X");

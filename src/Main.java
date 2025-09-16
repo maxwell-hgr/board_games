@@ -14,22 +14,20 @@ public class Main {
 		case 0: yield new TTTGame();
 	}
 
-	while(!game.isEndGame()){
+	boolean endGame = false;
+	while(endGame){
 		if(game instanceof SelectablePiece){
 			// pick piece coordinates + validate
 			game.selectPiece(row, col);
 		}
 
 		// deal with terminal interface
-		game.getAvaliableMoves();
+		boolean[][] avaliableMoves = game.getAvaliableMoves();
 
+		game.move(row, col, avaliableMoves);
 
-		// pick move coordinates + validate and move
-		game.move(row, col);
+		endGame = game.isEndGame();
 
-		// check if end game
-		// change player
-
-		// repeat
+		game.changePlayer();
 	}
 }
