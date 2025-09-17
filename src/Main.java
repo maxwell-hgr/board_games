@@ -1,6 +1,4 @@
 
-
-
 import core.Board;
 import core.Game;
 import core.Piece;
