@@ -14,6 +14,8 @@ public interface Game {
 
 	void changePlayer();
 
+	GUI getGUI();
+
     Board getBoard();
 
     Player getPlayerMoving();

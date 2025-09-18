@@ -2,8 +2,8 @@
 
 public interface GUI {
 	
-	void printBoardAvaliableMoves();
+	void printBoardAvaliableMoves(Board board, boolean[][] avaliableMoves);
 
-	void printBoard();
+	void printBoard(Board board);
 
 }

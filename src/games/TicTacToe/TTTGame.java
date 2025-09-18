@@ -10,6 +10,7 @@ public class TTTGame implements Game {
 	private TTTBoard board;
 	private TTTPlayer[] players = new TTTPlayer[2];
 	private TTTPlayer playerMoving;
+	private TTTGUI gui;
 
 	public TTTGame () {
 		this.startGame();
@@ -18,6 +19,7 @@ public class TTTGame implements Game {
 
 	public void startGame(){
 		this.board = new TTTBoard();
+		this.gui = new GUI();
 	}
 
 	public boolean[][] getAvaliableMoves(){
@@ -104,5 +106,9 @@ public class TTTGame implements Game {
 
     public Player getPlayerMoving() {
         return playerMoving;
+    }
+
+    public GUI getGUI(){
+    	return this.gui;
     }
 }
